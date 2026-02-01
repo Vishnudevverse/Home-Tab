@@ -38,7 +38,6 @@ body.dark {
 header {
     display: flex;
     flex-wrap: wrap;
-    
     padding: 0.75em;
     flex-direction: row;
     gap: 1rem;
@@ -68,7 +67,11 @@ button {
     background-color: var(--fg-color);
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: large;
+}
+
+button:hover {
+    background-color: var(--focus-bg);
 }
 
 main {
@@ -136,6 +139,7 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
+    border: 2px solid var(--bg-color);
     background-color: var(--fg-color);
     height: auto;
     overflow-y: scroll;
@@ -146,8 +150,6 @@ input::placeholder {
 
 .search-drop:focus-within .dropdown {
     max-height: 40vh;
-    /*clamp(50px, 40vh, 250px);*/
-
 }
 
 .dropdown a {
@@ -185,4 +187,26 @@ hr {
     margin: 0.1rem 0;
     align-self: center;
     width: 99%;
+}
+
+.shortcuts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    max-width: 70vw;
+    margin: 50px auto;
+    gap: 15px;
+}
+
+.shortcuts div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: larger;
+    letter-spacing: 0.1rem;
+}
+
+.shortcuts div button {
+    height: 50px;
+    width: 50px;
 }
