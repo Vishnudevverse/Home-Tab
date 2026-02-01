@@ -1,15 +1,100 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title></title>
+    <title>New Tab</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Welcome Home</h1>
-    <div class="shortcuts">
-        <a href="https://github.com">GitHub</a>
-        <a href="https://leetcode.com">LeetCode</a>
-        <iframe src="t-rex-runner/index.html" width="600" height="200" style="border:none;"></iframe>
-    </div>
+    <header>
+        <button onclick="addquickpop()">
+            <strong>+ | </strong> Quick
+        </button>
+        <a href="#">Gmail</a>
+        <a href="#">Gmail2</a>
+        <a href="#">Web1</a>
+        <a href="#">Web2</a>
+    </header>
+    <main>
+        <div class="search-drop">
+            <div class="engine-bar">
+                <button onclick="addenginepop()">
+                    <strong>+ | </strong> Engine
+                </button>
+                <button style="border: 3px solid red;"><strong style="color:red;">G | </strong> Google</button>
+                <button style="border: 3px solid green;"><strong style="color:green;">M | </strong>Microsoft</button>
+                <button style="border: 3px solid blue;"><strong style="color:blue;">Y | </strong>Youtube</button>
+                <button style="border: 3px solid orange;"><strong style="color:orange;">Y | </strong>Yahoo</button>
+            </div>
+            <div class="search">
+                <strong id="show-search">Google</strong>
+                <input placeholder="search..">
+            </div>
+            <div class="dropdown" id="search-drop">
+                <a href="#">
+                    <p>Hello World!</p>
+                    <p>URL</p>
+                </a>
+                <hr>
+                <a href="#">
+                    <p>Hello World!</p>
+                    <p>URL</p>
+                </a>
+                <hr>
+                <a href="#">
+                    <p>Hello World!</p>
+                    <p>URL</p>
+                </a>
+                <hr>
+                <a href="#">
+                    <p>Hello World!</p>
+                </a>
+                <hr>
+                <a href="#">
+                    <p>Hello World!</p>
+                </a>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
+
+<!-- <script src="quicklinks/form/form.js"></script> 
+<script src="script.js" defer></script>
+
+        <section class="shortcuts">
+            <div>
+                <button>
+                    <strong>A</strong>
+                </button>
+                word
+            </div>
+            <div>
+                <button>
+                    <strong>B</strong>
+                </button>
+                word
+            </div>
+            <div>
+                <button>+
+                </button>
+                Add
+            </div>
+        </section>
+    </main>
+    <footer>
+        <iframe class="game" scrolling="no" src="t-rex-runner/index.html"></iframe>
+        <div class="footleft">
+            <button onclick="toggleTheme()">Light</button>
+            <button>Save Battery</button>
+        </div>
+        <div class="footright">
+            <a href="">Extensions</a>
+            <a href="">Downloads</a>
+            <a href="">History</a>
+            <a href="">BookMarks</a>
+            <a href="">Settings</a>
+        </div>
+    </footer>-->
