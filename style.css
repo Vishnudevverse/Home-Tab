@@ -3,6 +3,12 @@
     --bg-color: white;
     --fg-color: black;
     --focus-bg: rgb(56, 56, 56);
+    --focus-invert-bg: rgb(200, 200, 200);
+    /* battery */
+    --border-radius: 5px;
+    --animated-drop-down: max-height 0.15s ease-in-out;
+    /* battery */
+    scrollbar-width: none;
 }
 
 * {
@@ -26,19 +32,26 @@ body.dark {
     --fg-color: white;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     body {
         --bg-color: black;
         --body-bg-color: black;
         --fg-color: white;
         --focus-bg: rgb(200, 200, 200);
+        --focus-invert-bg: rgb(56, 56, 56);
     }
-}
+} */
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    border-bottom: 1px solid grey;
     display: flex;
     flex-wrap: wrap;
-    padding: 0.75em;
+    padding: 0.25em;
     flex-direction: row;
     gap: 1rem;
     justify-content: flex-start;
@@ -46,10 +59,13 @@ header {
     background-color: var(--fg-color);
 }
 
-header a {
+a {
+    background-color: var(--fg-color);
     color: var(--bg-color);
     text-decoration: none;
-    row-gap: 1rem;
+}
+
+header a {
     font-size: medium;
 }
 
@@ -58,11 +74,15 @@ header button {
     color: var(--fg-color);
 }
 
+header button:hover {
+    background-color: var(--focus-invert-bg);
+}
+
 button {
     cursor: pointer;
-    padding: 0.1rem 0.5rem;
+    padding: 5px 5px;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     color: var(--bg-color);
     background-color: var(--fg-color);
     justify-content: center;
@@ -95,7 +115,7 @@ main {
     justify-content: space-around;
     height: 50px;
     background-color: var(--fg-color);
-    border-radius: 15px;
+    border-radius: var(--border-radius);
 }
 
 input {
@@ -115,12 +135,13 @@ input::placeholder {
 
 .search-drop {
     position: relative;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: auto;
     min-width: 50vw;
-    max-width: 80vw;
+    max-width: 90vw;
 }
 
 .search Strong {
@@ -132,20 +153,20 @@ input::placeholder {
 
 .dropdown {
     position: absolute;
-    top: 102%;
+    top: 100%;
     left: 5px;
     right: 5px;
     z-index: 10;
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     border: 2px solid var(--bg-color);
     background-color: var(--fg-color);
     height: auto;
     overflow-y: scroll;
     scrollbar-width: none;
     max-height: 0;
-    transition: max-height 0.1s ease-in-out;
+    transition: var(--animated-drop-down);
 }
 
 .search-drop:focus-within .dropdown {
@@ -153,8 +174,6 @@ input::placeholder {
 }
 
 .dropdown a {
-    background-color: inherit;
-    color: var(--bg-color);
     display: flex;
     padding: 0.35rem;
     justify-content: space-between;
@@ -190,10 +209,10 @@ hr {
 }
 
 .shortcuts {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-    max-width: 70vw;
-    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90vw;
+    margin: 15px auto;
     gap: 15px;
 }
 
@@ -201,12 +220,146 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 5px;
     font-size: larger;
     letter-spacing: 0.1rem;
 }
 
+.shortcuts div a {
+    padding: 1rem 1rem;
+    border-radius: var(--border-radius);
+}
+
 .shortcuts div button {
     height: 50px;
     width: 50px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0.25rem 1rem;
+    background-color: var(--fg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid grey;
+}
+
+.right-footer {
+    display: flex;
+    gap: 15px;
+}
+
+footer button {
+    background-color: black;
+    justify-content: center;
+}
+
+footer button:hover {
+    background-color: rgb(70, 70, 70);
+}
+
+/* .edit-quick {
+    display: none;
+} */
+
+.edit-quick {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 150;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    /* flex */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.tab .buttonsel {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+}
+
+.tab button {
+    border: 1px solid var(--bg-color);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.tab {
+    background-color: var(--fg-color);
+    width: 400px;
+    border-radius: var(--border-radius);
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+
+.edit-quick form {
+    width: 400px;
+    max-height: 600px;
+    background-color: var(--bg-color);
+    border-bottom: 2px solid var(--fg-color);
+    border-left: 2px solid var(--fg-color);
+    border-right: 2px solid var(--fg-color);
+}
+
+
+/* .edit-quick form:first-child{
+} */
+.edit-quick form {
+    border-radius: var(--border-radius);
+}
+
+#rearrange div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 5px;
+    flex-direction: row;
+}
+
+#rearrange div div {
+    gap: 5px;
+}
+
+#rearrange div button {
+    background-color: var(--bg-color);
+}
+
+#modify {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    padding: 10px;
+    color: var(--fg-color);
+}
+
+#modify button:first-of-type {
+    background-color: red;
+    color: white;
+}
+
+#add {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#add button {
+    background-color: green;
+    color: white;
 }
