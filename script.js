@@ -1,12 +1,9 @@
-// loadModule();
-
-
-
-
-
-
-// import { loadModule } from './quicklinks/script.js';
-// loadModule();
+async function loadgamemodule() {
+    const frame = document.createElement("iframe");
+    frame.src = "t-rex-runner/index.html";
+    document.querySelector("main").appendChild(frame);
+}
+loadgamemodule();
 // function toggleTheme() {
 //     document.body.classList.toggle("dark");
 

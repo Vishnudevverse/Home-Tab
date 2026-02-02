@@ -1,0 +1,6 @@
+:root {
+    /* battery */
+    --border-radius: 5px;
+    --animated-drop-down: max-height 0.15s ease-in-out;
+    /* battery */
+}
