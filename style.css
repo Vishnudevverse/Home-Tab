@@ -13,7 +13,6 @@
     justify-content: space-around;
     height: 50px;
     background-color: var(--fg-color);
-    border-radius: var(--border-radius)
 }
 
 .search-drop {
@@ -41,7 +40,6 @@
     z-index: 10;
     display: flex;
     flex-direction: column;
-    border-radius: var(--border-radius);
     border: 2px solid var(--body-bg-color);
     background-color: var(--fg-color);
     height: auto;
@@ -65,18 +63,6 @@
 
 .dropdown a:hover {
     background-color: var(--focus-bg)
-}
-
-.dropdown a:first-child {
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-    padding-top: .5rem
-}
-
-.dropdown a:last-child {
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
-    padding-bottom: .5rem
 }
 
 .dropdown a p:nth-child(2) {
@@ -104,7 +90,6 @@
 
 .shortcuts div a {
     padding: 1rem 1rem;
-    border-radius: var(--border-radius)
 }
 
 .shortcuts div button {
@@ -116,15 +101,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 15px
-}
-
-footer button {
-    background-color: #000;
-    justify-content: center
-}
-
-footer button:hover {
-    background-color: #464646
 }
 
 .edit-quick {
@@ -149,14 +125,11 @@ footer button:hover {
 
 .tab button {
     border: 1px solid var(--bg-color);
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0
 }
 
 .tab {
     background-color: var(--fg-color);
     width: 400px;
-    border-radius: var(--border-radius);
     padding-top: 5px;
     padding-left: 5px
 }
@@ -170,9 +143,6 @@ footer button:hover {
     border-right: 2px solid var(--fg-color)
 }
 
-.edit-quick form {
-    border-radius: var(--border-radius)
-}
 
 #rearrange div {
     display: flex;
@@ -216,4 +186,26 @@ footer button:hover {
 #add button {
     background-color: green;
     color: #fff
+}
+
+.game-clock {
+    display: flex;
+    align-items: center;
+    width: clamp(50vw, 800px, 90%);
+    position: relative;
+    border: 1px solid var(--fg-color);
+}
+
+.clock {
+    opacity: 1;
+    position: absolute;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+.clock.hidden{
+    opacity: 0;
 }

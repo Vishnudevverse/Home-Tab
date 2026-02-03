@@ -1,0 +1,9 @@
+:root {
+    --bg-color: #000000;
+    --fg-color: #ffffff;
+    --border-color: #333333;
+    --grid-line-color: #000000;
+    --btn-bg: #ffffff;
+    --btn-text: #000000;
+    --btn-hover: #cccccc;
+}

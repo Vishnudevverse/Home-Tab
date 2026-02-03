@@ -1,0 +1,150 @@
+:root {
+    --fg-color: #000000;
+    --bg-color: rgb(175, 175, 175);
+    --border-color: #333333;
+    --grid-line-color: #ffffff;
+    --btn-text: #ffffff;
+    --btn-bg: #000000;
+    --btn-hover: #cccccc;
+}
+
+
+body {
+    background: var(--bg-color);
+    color: var(--fg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: monospace;
+}
+
+#main-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    height: 90vh;
+}
+
+#game-container {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 9/16;
+    border: 2px solid var(--border-color);
+    background: var(--bg-color);
+}
+
+canvas#tetris {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#side-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 160px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#clock-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#time {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+#date {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    white-space: nowrap;
+}
+
+#score-board {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 5px;
+}
+
+.score-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.score-box.left {
+    text-align: left;
+}
+
+.score-box.right {
+    text-align: right;
+}
+
+.label {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.value {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+@media (max-width: 320px) {
+    #game-container {
+        aspect-ratio: 7/16;
+    }
+}
+
+#next-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#next-label {
+    font-size: 1rem;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+canvas#next {
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    width: 100px;
+    height: 100px;
+}
+
+#btn-toggle {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 2px solid var(--btn-bg);
+
+    padding: 10px 0;
+    margin-top: 10px;
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: 900;
+    cursor: pointer;
+    width: 100%;
+    max-width: 120px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background-color 0.2s, transform 0.1s;
+}

@@ -1,6 +1,33 @@
 :root {
-    /* battery */
     --border-radius: 5px;
-    --animated-drop-down: max-height 0.15s ease-in-out;
-    /* battery */
+    --animated-drop-down: max-height 0.1s ease-in;
+}
+
+.search {
+    border-radius: var(--border-radius)
+}
+
+.dropdown {
+    border-radius: var(--border-radius);
+}
+
+.shortcuts div a {
+    border-radius: var(--border-radius)
+}
+
+.edit-quick form {
+    border-radius: var(--border-radius)
+}
+
+.tab button {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0
+}
+
+.tab {
+    border-radius: var(--border-radius);
+}
+
+.game-clock {
+    border-radius: var(--border-radius);
 }

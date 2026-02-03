@@ -1,9 +1,0 @@
-@media (prefers-color-scheme: dark) {
-    body {
-        --bg-color: black;
-        --body-bg-color: black;
-        --fg-color: white;
-        --focus-bg: rgb(200, 200, 200);
-        --focus-invert-bg: rgb(56, 56, 56);
-    }
-}
