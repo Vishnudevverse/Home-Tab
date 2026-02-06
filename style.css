@@ -85,11 +85,8 @@
     text-align: center;
     gap: 5px;
     font-size: larger;
-    letter-spacing: .1rem
-}
-
-.shortcuts div a {
-    padding: 1rem 1rem;
+    letter-spacing: .1rem;
+    padding: 0.5rem 0.5rem;
 }
 
 .shortcuts div button {
@@ -206,6 +203,10 @@
     transition: opacity 0.3s ease;
     z-index: 10;
 }
-.clock.hidden{
+
+.clock.hidden {
     opacity: 0;
+}
+.main-right{
+    width: 100%;
 }

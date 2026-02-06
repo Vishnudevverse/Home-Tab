@@ -58,7 +58,31 @@
         main {
             display: flex;
             flex-direction: column;
-            align-items: center
+            align-items: center;
+        }
+
+        @media(min-width:1100px) {
+            main {
+                display: grid;
+                margin: 2rem;
+                grid-template-columns: 1.5fr 1fr;
+                grid-template-rows: auto;
+                align-items: start;
+                grid-template-areas: "mainleft mainright";
+            }
+
+            .main-right {
+                position: relative;
+                top: 10%;
+                grid-area: mainright;
+                width: 100%;
+            }
+
+            .main-left {
+                grid-area: mainleft;
+                display: flex;
+                flex-direction: column;
+            }
         }
 
         a {
@@ -111,38 +135,12 @@
             font-size: medium
         }
 
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: .25rem 1rem;
-            background-color: var(--fg-color);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid grey
-        }
-
         iframe {
             width: 100%;
             height: 400px;
             border: none;
             border-radius: var(--border-radius);
-            background-color: var(--bg-color);
             margin: 0 auto;
-        }
-
-        footer button {
-            background-color: #000;
-            justify-content: center
-        }
-
-        footer button:hover {
-            background-color: #464646
         }
     </style>
     <link rel="stylesheet" href="style.css">
@@ -152,6 +150,9 @@
 
 <body>
     <header>
+        <button onclick="editextension()">
+            <strong>&#x2699;</strong>
+        </button>
         <button onclick="addquickpop()">
             <strong>✎</strong>
         </button>
@@ -161,101 +162,100 @@
         <a href="#">Web2</a>
     </header>
     <main>
-        <div class="search-drop">
-            <div class="engine-bar">
-                <button onclick="addenginepop()">
-                    <strong>✎</strong>
-                </button>
-                <button style="border: 3px solid red;"><strong style="color:red;">G | </strong> Google</button>
-                <button style="border: 3px solid green;"><strong style="color:green;">M | </strong>Microsoft</button>
-                <button style="border: 3px solid blue;"><strong style="color:blue;">Y | </strong>Youtube</button>
-                <button style="border: 3px solid orange;"><strong style="color:orange;">Y | </strong>Yahoo</button>
-            </div>
-            <div class="search">
-                <strong id="show-search">Google</strong>
-                <input placeholder="search..">
-            </div>
-            <div class="dropdown" id="search-drop">
-                <a href="#">
-                    <p>Hello World!</p>
-                    <p>URL</p>
-                </a>
-                <hr>
-                <a href="#">
-                    <p>Hello World!</p>
-                    <p>URL</p>
-                </a>
-                <hr>
-                <a href="#">
-                    <p>Hello World!</p>
-                    <p>URL</p>
-                </a>
-                <hr>
-                <a href="#">
-                    <p>Hello World!</p>
-                </a>
-                <hr>
-                <a href="#">
-                    <p>Hello World!</p>
-                </a>
-            </div>
-        </div>
-        <div class="shortcuts">
-            <div>
-                <a href="#">
-                    <strong>A</strong>
-                </a href="#">
-                word
-            </div>
-            <div>
-                <a href="#">
-                    <strong>B</strong>
-                </a href="#">
-                word
-            </div>
-            <div>
-                <a href="#">
-                    <strong>C</strong>
-                </a href="#">
-                word
-            </div>
-            <div>
-                <a href="#">
-                    <strong>D</strong>
-                </a href="#">
-                word
-            </div>
-            <div>
-                <a href="#">
-                    <strong>E</strong>
-                </a href="#">
-                word
-            </div>
-            <div>
-                <a href="#">
-                    <strong>F</strong>
-                </a href="#">
-                word
-            </div>
-            <div>
+        <section class="main-left">
+            <div class="shortcuts">
                 <button>
-                    <strong>✎</strong>
+                    Downloads &#x2913;
+                </button>
+                <button>
+                    BookMarks &#128278;
+                </button>
+                <button>
+                    Extensions &#x1F9E9;
+                </button>
+                <button>
+                    History &#10227;
+                </button>
+                <button>
+                    Settings &#x1F6E0;
                 </button>
             </div>
-        </div>
-        <iframe src="game-clock.html" frameborder="0"></iframe>
-        <div id="main-wrapper"></div>
-    </main>
-    <footer>
-        <button>⚙️</button>
-        <section class="right-footer">
-            <a href="">Extensions</a>
-            <a href="">Downloads</a>
-            <a href="">History</a>
-            <a href="">BookMarks</a>
-            <a href="">Settings</a>
+            <div class="search-drop">
+                <div class="engine-bar">
+                    <button onclick="addenginepop()">
+                        <strong>✎</strong>
+                    </button>
+                    <button style="border: 3px solid blue;"><strong style="color:blue;">G | </strong> Google</button>
+                    <button style="border: 3px solid green;"><strong style="color:green;">M |
+                        </strong>Microsoft</button>
+                    <button style="border: 3px solid red;"><strong style="color:red;">Y | </strong>Youtube</button>
+                    <button style="border: 3px solid purple;"><strong style="color:purple;">Y | </strong>Yahoo</button>
+                </div>
+                <div class="search">
+                    <strong id="show-search">Google</strong>
+                    <input placeholder="search..">
+                </div>
+                <div class="dropdown" id="search-drop">
+                    <a href="#">
+                        <p>Hello World!</p>
+                        <p>URL</p>
+                    </a>
+                    <hr>
+                    <a href="#">
+                        <p>Hello World!</p>
+                        <p>URL</p>
+                    </a>
+                    <hr>
+                    <a href="#">
+                        <p>Hello World!</p>
+                        <p>URL</p>
+                    </a>
+                    <hr>
+                    <a href="#">
+                        <p>Hello World!</p>
+                    </a>
+                    <hr>
+                    <a href="#">
+                        <p>Hello World!</p>
+                    </a>
+                </div>
+            </div>
+            <div class="shortcuts">
+                <div>
+                    <button>A</button>
+                    word
+                </div>
+                <div>
+                    <button>B</button>
+                    word
+                </div>
+                <div>
+                    <button>C</button>
+                    word
+                </div>
+                <div>
+                    <button>D</button>
+                    word
+                </div>
+                <div>
+                    <button>E</button>
+                    word
+                </div>
+                <div>
+                    <button>F</button>
+                    word
+                </div>
+                <div>
+                    <button>
+                        <strong>✎</strong>
+                    </button>
+                </div>
+            </div>
         </section>
-    </footer>
+        <section class="main-right"> <!--Load this via script js-->
+            <iframe src="game/game-clock.html" frameborder="0"></iframe> <!--Load this via script js-->
+        </section>
+    </main>
     <section class="edit-quick">
         <section class="tab">
             <button class="buttonsel">ADD</button>
