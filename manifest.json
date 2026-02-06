@@ -1,8 +1,17 @@
 {
+    "manifest_version": 3,
     "name": "New Tab",
     "version": "1.0",
-    "manifest_version": 3,
-    "description": "A New Deblooted version of Home Page for Browsers with Chromium support",
+    "description": "A New Deblooted version of Home Page for Browsers",
+    "permissions": [
+        "bookmarks",
+        "history",
+        "tabs",
+        "downloads"
+    ],
+    "action": {
+        "default_popup": "index.html"
+    },
     "chrome_url_overrides": {
         "newtab": "index.html"
     }

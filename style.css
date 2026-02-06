@@ -92,6 +92,11 @@
     width: 50px
 }
 
+.shortcuts div p {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
 .right-footer {
     display: flex;
     flex-wrap: wrap;
