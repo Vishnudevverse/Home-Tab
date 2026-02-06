@@ -45,6 +45,7 @@
     .main-left {
         grid-area: mainleft;
         display: flex;
+        width: auto;
         flex-direction: column;
     }
 }
