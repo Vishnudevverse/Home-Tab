@@ -8,3 +8,43 @@ load brower history then the search_query -> DropDown
 
 
 savebattery -> remove animations and game at loading level and imgs and switch btw static html border radius and clock and calender and black only
+
+// Saving a high score
+const highScore = 5000;
+localStorage.setItem('tetris_high_score', highScore.toString());
+
+// Saving a small settings object
+const settings = { theme: 'dark', batterySaver: true };
+localStorage.setItem('user_prefs', JSON.stringify(settings));
+
+// Accessing the score
+const savedScore = localStorage.getItem('tetris_high_score');
+console.log(savedScore ? parseInt(savedScore) : 0);
+
+// Accessing the object
+const savedPrefs = JSON.parse(localStorage.getItem('user_prefs'));
+console.log(savedPrefs?.theme || 'light');
+
+---
+
+// Saving data (accepts objects directly, no stringify needed)
+const gameData = {
+    lastLevel: 5,
+    customShortcuts: ['Web1', 'Web2']
+};
+
+chrome.storage.local.set({ 'session_info': gameData }, () => {
+    console.log('Data saved successfully to extension storage!');
+});
+
+// Accessing data via a callback or Promise
+chrome.storage.local.get(['session_info'], (result) => {
+    if (result.session_info) {
+        console.log('Current Level:', result.session_info.lastLevel);
+    }
+});
+
+Data Type	Recommended Storage	Reason
+Tetris High Score	localStorage	Very fast for a single number.
+Search Engine List	chrome.storage.local	Better for arrays/objects and extension-specific data.
+User Theme	localStorage	Fast enough to prevent a "flash" of white on load.

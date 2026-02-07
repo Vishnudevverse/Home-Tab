@@ -1,0 +1,24 @@
+@media(min-width:1100px) {
+    main {
+        display: grid;
+        margin: 2rem;
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: auto;
+        align-items: start;
+        grid-template-areas: "mainleft mainright";
+    }
+
+    .main-right {
+        position: relative;
+        top: 10%;
+        grid-area: mainright;
+        width: 100%;
+    }
+
+    .main-left {
+        grid-area: mainleft;
+        display: flex;
+        width: auto;
+        flex-direction: column;
+    }
+}
