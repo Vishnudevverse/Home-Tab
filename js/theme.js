@@ -9,9 +9,4 @@ function applyTheme() {
         darkSheet.disabled = !shouldBeDark;
     }
 }
-window.addEventListener('storage', (e) => {
-    if (e.key === 'usertheme') {
-        applyTheme();
-    }
-});
 applyTheme();

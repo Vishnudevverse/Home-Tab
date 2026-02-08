@@ -1,13 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    function openLink(url) {
-        chrome.tabs.create({ url: url });
-    }
-
-    document.getElementById('btn-bookmarks').addEventListener('click', () => openLink('edge://favorites'));
-    document.getElementById('btn-downloads').addEventListener('click', () => openLink('edge://downloads'));
-    document.getElementById('btn-extensions').addEventListener('click', () => openLink('edge://extensions'));
-    document.getElementById('btn-history').addEventListener('click', () => openLink('edge://history'));
-    document.getElementById('btn-settings').addEventListener('click', () => openLink('edge://settings'));
+    document.getElementById('btn-bookmarks').addEventListener('click', () => chrome.tabs.create({ url: 'edge://favorites' }));
+    document.getElementById('btn-downloads').addEventListener('click', () => chrome.tabs.create({ url: 'edge://downloads' }));
+    document.getElementById('btn-extensions').addEventListener('click', () => chrome.tabs.create({ url: 'edge://extensions' }));
+    document.getElementById('btn-history').addEventListener('click', () => chrome.tabs.create({ url: 'edge://history' }));
+    document.getElementById('btn-settings').addEventListener('click', () => chrome.tabs.create({ url: 'edge://settings' }));
 
     function loadGameModule() {
         const loadGame = localStorage.getItem('gameload') || 'true';
